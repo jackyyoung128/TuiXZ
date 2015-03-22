@@ -27,7 +27,7 @@ ZB H,E;
 
 bool flag;
 int Zou[4][2] = {-1,0,1,0,0,-1,0,1};
-
+//上下左右 
 
 void init ()
 {
@@ -53,7 +53,7 @@ void out ()
 	}
 }
 
-int PD (int x,int y)
+int PD (int x,int y)//判断是否有输入错误情况 
 {
 	if ( x<1 || x>10) return 1;
 	if ( y<1 || y>10) return 1;
@@ -61,7 +61,7 @@ int PD (int x,int y)
 	return 0;
 }
 
-void Start (int x,int y,int d)
+void Start (int x,int y,int d)//进行移动 
 {
 	if ( Map[x][y] == '#' && Map[x+Zou[d][0]][y+Zou[d][1]] != '*')
 	{
@@ -79,7 +79,7 @@ void Start (int x,int y,int d)
 	Map[H.x][H.y] = 'H';
 }
 
-void work ()
+void work ()//进行移动前的初始化 
 {
 	char c = getch ();
 	int d;
